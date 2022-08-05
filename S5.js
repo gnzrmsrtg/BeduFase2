@@ -74,24 +74,22 @@ console.log(jhon) */
 ];
 
 function pluck(list, propertyName) {
-    let values = [];
-    
+    let extract = [];
     for (let i = 0; i < list.length; i++) {
-        values.push(list[i][propertyName]);
+        extract.push(list[i][propertyName])
     }
-    
-    return values
+    return extract
 }
 
-console.log( pluck(singers, 'name') );
+console.log(pluck(singers, 'name'));
 // ["Steven Tyler", "Karen Carpenter", "Kurt Cobain", "Chris Cornell"]
 
-console.log( pluck(singers, 'band') );
+console.log(pluck(singers, 'band'));
 // ["Aerosmith", "The Carpenters", "Nirvana", "Soundgarden"]
 
-console.log( pluck(singers, 'born') );
-// [1948, 1950, 1967, 1964] */
-
+console.log(pluck(singers, 'born'));
+// [1948, 1950, 1967, 1964]
+ */
 
 //////////////////////////////////////////////////////////////////////
 
@@ -99,22 +97,55 @@ console.log( pluck(singers, 'born') );
 /// RETO 2
 /// Escribir una función que reciba un arreglo de 10 enteros entre 0 - 9, y retorne un string en forma de número telefónico.
 
-function createPhoneNumber([numbers]) {
-    let values = [];
-
-    for (let i = 0; i < numbers.length; i++) {
-        const result = values.push(numbers[i])
-    }    
-
-    return values.toString
+/* function createPhoneNumber(numbers) {
+    if (numbers.length !== 10) {
+        console.log ('La cantidad de dígitos es diferente a 10')
+    } else {
+    let convertString = String(numbers);
+    let sinFormato = convertString.replace(/,/g, '')
+    
+    part1 = sinFormato.slice(0,3) 
+    part2 = sinFormato.slice(3,6)
+    part3 = sinFormato.slice(6,10)
+    console.log(`(${part1}) ${part2}-${part3}`)
+    }
 }
 
 createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]); // "(123) 456-7890"
-
+ */
 
 //////////////////////////////////////////////////////////////////////
 
 /// RETO 3 
-/// Escribir una función que reciba un arreglo de n cantidad de enteros positivos que pueden no estar ordenados. La función debe retornar un nuevo arreglo con los elementos faltantes del primer arreglo.
+/// Escribir una función que reciba un arreglo de n cantidad de enteros positivos que pueden no estar ordenados. 
+/// La función debe retornar un nuevo arreglo con los elementos faltantes del primer arreglo.
+
+function findMissingNumbers (num) {
+    const orderNumbers = num.sort(function(a,b){return a-b;})
+    const maximo = Math.max(...orderNumbers)
+    const minimo = Math.min(...orderNumbers)
+    const todosNumeros = []
+    
+    for (let nm = minimo; nm <= maximo; nm++) {
+        console.log(nm)
+        for (let filt = 0; filt < orderNumbers.length; filt++) {
+            console.log(filt)
+            if (nm !== orderNumbers[filt]) {
+                todosNumeros.push(nm)
+            }
+        }
+    }
+    console.log (todosNumeros)
+/*         todosNumeros.push(nm)
+    }
+
+    const nuevoArray = todosNumeros.filter()
+    console.log(nuevoArray)
+
+    for (let filt = 0; filt < orderNumbers.length; filt++) {
+        console.log(orderNumbers[filt])                        
+    }
+ */}
+
 
 findMissingNumbers([2, 1, 9, 5, 7, 3, 10]); // [4, 6, 8]
