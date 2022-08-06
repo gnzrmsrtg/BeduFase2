@@ -1,5 +1,118 @@
 
-// Aquí declaramos los datos de todos los gatos
+
+// Ejercicio 1 - Operadores If / Else
+
+/* const time = 19;
+let greeting;
+
+if (time > 0 && time < 6) {
+    greeting = 'Buenas madrugadas!'  
+} else if (time >= 6 && time < 12) {
+    greeting = 'Buenos días!'
+} else if (time >= 12 && time < 19) {
+    greeting = 'Buenas tardes!'
+} else if (time >= 19 && time <= 23) {
+    greeting = 'Buenas noches!'
+} else if (time < 0 || time > 23) {
+    greeting = 'No inventes horas!'
+}
+
+console.log(greeting); */
+
+////////////////////////////////////////////////
+
+// Ejercicio 2 - Switch
+
+/* const day = 4;
+let text;
+
+switch (day) {
+    case 1:
+        text = 'Monday'
+        break;
+    case 2:
+        text = 'Tuesday'
+        break;
+    case 3:
+        text = 'Wednesday'
+        break;
+    case 4:
+        text = 'Thursday'
+        break;
+    case 5:
+        text = 'Friday'
+        break;
+    case 6:
+        text = 'Saturday'
+        break;
+    case 7:
+        text = 'Sunday'
+        break;
+    default: 
+        text = 'No inventes días'
+        break;
+}
+
+console.log(text) */
+
+////////////////////////////////////////////////
+
+// Ejercicio 3 - Operador Ternario
+
+/* const speed = 120;
+let message;
+
+message = speed > 100 ? 'Vas muy rápido' : 'Vas por debajo del límite'
+
+
+// Forma de hacerlo con IF 
+
+// if (speed > 100) {
+//    message = 'Vas muy rápido'
+// } else {
+//     message = 'Vas por debajo del límite';
+// } 
+
+const isFast = speed > 100;
+
+console.log(message)
+console.log(`¿En verdad vas muy rápido? ${isFast}`) */
+
+////////////////////////////////////////////////
+
+// Ejemplo 4 - Bucle
+
+/* for (let i = 0; i < 200; i++) {
+    if (i === 196) continue
+    console.log('Hola mundo!', i)
+} */
+
+// Reto 2 - Números pares
+
+/* for (let i = 0; i <= 100; i++) {
+    if (i % 2 === 0) console.log(i)
+} */
+
+// Reto 3 - Números primos del 0 al 100
+
+    for (let counter = 3; counter <= 100; counter++) {
+        let isPrime = true;
+
+        for (let i = 2; i <= counter ; i++) {
+            console.log(counter, i, isPrime)
+            if (counter % i === 0 && i !== counter){
+                isPrime = false;
+            }
+        }
+
+        if (isPrime) console.log(`Número primo ${counter}`)
+    }
+
+////////////////////////////////////////////////
+
+/// EJERCICIOS DE PRÁCTICA
+
+/* // Aquí declaramos los datos de todos los gatos
 
 const cats = [
     { name: 'Chofo', age: 6, color: 'Black & White' },
@@ -55,4 +168,4 @@ for (let c = 0; c < cats.length; c++) {
     if (cats[c]['age'] === max) {
         console.log(`${cats[c]['name']} es el mayor, con ${max} años`)
     }
-}
+} */
