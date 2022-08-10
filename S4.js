@@ -77,7 +77,7 @@ getLargerEntero ([35, 13]) // Debe regresar 34
 
 // Reto 3 Fibonacci
 
-function fibo(num) {
+/* function fibo(num) {
     if (num === 0) return 0;
     if (num === 1) return 1;
     return fibo(num - 1) + fibo(num - 2);
@@ -91,4 +91,41 @@ function fibonacciSequence(limit) {
     }
 }
 
-fibonacciSequence(7);
+fibonacciSequence(7); */
+
+
+////////////////////////////////////////////////
+
+/// EJERCICIOS DE PRÁCTICA ///
+
+// Escribir una función llamada deepEqual que reciba dos argumentos y retorne true si son el mismo valor o si son objetos con las mismas propiedades, en este último caso los valores de las propiedades deben ser comparados con una llamada recursiva de deepEqual.
+
+// Usando el operador typeof puedes determinar si ambas variables son objetos, de ser así se debe llamar nuevamente deepEqual para comparar las propiedades de dichos objetos, en caso contrario solo es necesario revisar si ambas variables son estrictamente iguales.
+
+// La función Object.keys() es útil para obtener las propiedades de los objetos.
+
+
+function deepEqual(a, b) {
+    console.log(typeof a, typeof b)
+    check = a === b ? true : false;
+    if (typeof a === 'object' && a != null && typeof b === 'object' && b != null) {
+        deepEqual(Object.keys(a).length, Object.keys(b).length)
+        obj1 = Object.keys(a)
+        obj2 = Object.keys(b)
+        isEqual = obj2 === obj1
+        console.log(isEqual)
+    } 
+    return check
+}
+   
+const john = {
+firstName: 'John',
+lastName: 'Doe'
+}
+
+console.log('Test 1:', deepEqual(1, 1)) // true
+console.log('Test 2:', deepEqual(1, '1')) // false
+console.log('Test 3:', deepEqual(john, john)) // true
+console.log('Test 4:', deepEqual(john, { firstName: 'John', lastName: 'Doe' })) // true
+console.log('Test 5:', deepEqual(john, { firstName: 'John' })) // false
+   
