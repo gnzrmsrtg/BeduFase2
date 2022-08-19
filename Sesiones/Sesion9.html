@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 9</title>
+</head>
+<body>
+    <h1 id="title">Document Object Model</h1>
+    <p class="hello-world">Hello World!</p>
+    <p>Here is a
+      <a href="#">link</a>
+    </p>
+  
+    <script>
+
+    /* Obteniendo por id */
+        const title = document.getElementById('title');
+        console.log(`title`, title); // <h1 id="title">Document Object Model</h1>
+    /* Obteniendo por tag name */
+        const link = document.getElementsByTagName('p');
+        console.log(`link`, link)
+    /* Obteniendo por class */
+        const hello = document.getElementsByClassName('hello-world')
+        console.log(`hello`, hello)
+    </script>
+  </body>
+</html>

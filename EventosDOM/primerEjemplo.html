@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Ejemplo de Listeners</title>
+</head>
+<body>
+    <h1 id="title">Hell Of World</h1>
+    <button id="red">Red</button>
+    <button id="blue">Blue</button>
+    <button id="green">Green</button>
+
+    <script>
+        const title = document.getElementById('title')
+        const redButton = document.getElementById('red')
+        const blueButton = document.getElementById('blue')
+        const greenButton = document.getElementById('green')
+
+        redButton.addEventListener('click', function(){
+            title.style.color = 'red'
+            redButton.style.backgroundColor = 'red'
+        })
+        blueButton.addEventListener('click', function(){
+            title.style.color = 'blue'
+        })
+        greenButton.addEventListener('click', function(){
+            title.style.color = 'green'
+        })
+    </script>
+</body>
+</html>
